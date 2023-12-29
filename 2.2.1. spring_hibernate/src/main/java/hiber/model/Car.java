@@ -4,11 +4,10 @@ package hiber.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "car")
+@Table(name = "cars")
 public class Car {
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-// Теперь id не генерируется автоматически, а заполняется идентификатором User.
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "model")
@@ -51,10 +50,7 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
-                "id=" + id +
-                ", model='" + model + '\'' +
-                ", series=" + series +
-                '}';
+        return "model='" + model + '\'' +
+                ", series=" + series;
     }
 }

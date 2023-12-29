@@ -48,8 +48,7 @@ public class AppConfig {
       factoryBean.setHibernateProperties(props);
       factoryBean.setAnnotatedClasses(User.class, Car.class);
       //добавила класс Car к списку классов, учитываемых в процессе создания сессии Hibernate
-      factoryBean.setPackagesToScan("hiber");
-      // добавила автоматическое сканирование классов в пакете
+
       return factoryBean;
    }
 
