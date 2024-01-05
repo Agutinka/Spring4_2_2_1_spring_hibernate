@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-@Transactional
+@Transactional(readOnly = true)
 public class UserServiceImp implements UserService {
 
    private final UserDao userDao;
@@ -18,6 +18,7 @@ public class UserServiceImp implements UserService {
       this.userDao = userDao;
    }
 
+   @Transactional(readOnly = false)
    @Override
    public void add(User user) {
       userDao.add(user);
